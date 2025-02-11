@@ -1,5 +1,6 @@
 package com.example.bookjpa.user.controller;
 
+import com.example.bookjpa.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserController userController;
+    private final UserService userService;
 }

@@ -4,20 +4,12 @@ CREATE TABLE author
     name VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE user
-(
-    id   BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL
-);
-
 CREATE TABLE book
 (
     id          BIGINT AUTO_INCREMENT PRIMARY KEY,
     title       TEXT     NOT NULL,
-    loan_id     BIGINT,
     created_at  DATETIME NOT NULL,
     modified_at DATETIME NOT NULL,
-    CONSTRAINT fk_user FOREIGN KEY (loan_id) REFERENCES user (id)
 );
 
 CREATE TABLE book_author
@@ -28,4 +20,10 @@ CREATE TABLE book_author
     CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES book (id) ON DELETE CASCADE,
     CONSTRAINT fk_author FOREIGN KEY (author_id) REFERENCES author (id) ON DELETE CASCADE,
     UNIQUE (book_id, author_id)
+);
+
+CREATE TABLE user
+(
+    id   BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
 );

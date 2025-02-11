@@ -142,37 +142,37 @@ CREATE TABLE book_author
 - [X] Author Request
 - [X] Author Response
 - [ ] Author Controller
-    - [ ] 등록
-    - [ ] 전체 조회
-    - [ ] 해당 저자 책 조회
-    - [ ] 수정
-    - [ ] 삭제
-- [ ] Author Service
-    - [ ] 등록
-    - [ ] 전체 조회
-    - [ ] 해당 저자 책 조회
-    - [ ] 수정
-    - [ ] 삭제
-- [ ] Author Repository
+    - [X] 등록
+    - [X] 전체 조회
+    - [X] 해당 저자 책 조회
+    - [X] 수정
+    - [X] 삭제
+- [X] Author Service
+    - [X] 등록
+    - [X] 전체 조회
+    - [X] 해당 저자 책 조회
+    - [X] 수정
+    - [X] 삭제
+- [X] Author Repository
 
 #### Book
 
 - [X] Book Entity (TimeStamped Auditing)
 - [X] Book Request
 - [X] Book Response
-- [ ] Book Controller
-    - [ ] 등록
-    - [ ] 전체 조회
-    - [ ] 단건 조회
-    - [ ] 수정
-    - [ ] 삭제
-- [ ] Book Service
-    - [ ] 등록
-    - [ ] 전체 조회
-    - [ ] 단건 조회
-    - [ ] 수정
-    - [ ] 삭제
-- [ ] Book Repository
+- [X] Book Controller
+    - [X] 등록
+    - [X] 전체 조회
+    - [X] 단건 조회
+    - [X] 수정
+    - [X] 삭제
+- [X] Book Service
+    - [X] 등록
+    - [X] 전체 조회
+    - [X] 단건 조회
+    - [X] 수정
+    - [X] 삭제
+- [X] Book Repository
 
 
 #### User

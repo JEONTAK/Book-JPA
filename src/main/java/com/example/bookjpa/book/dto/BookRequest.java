@@ -7,9 +7,9 @@ import lombok.Getter;
 public class BookRequest {
 
     private final String title;
-    private final List<Integer> authors;
+    private final List<Long> authors;
 
-    private BookRequest(String title, List<Integer> authors) {
+    private BookRequest(String title, List<Long> authors) {
         this.title = title;
         this.authors = authors;
     }
