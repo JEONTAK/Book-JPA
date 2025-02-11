@@ -73,7 +73,7 @@
 
 |        기능        | HTTP Method |       URL       | Parameters | Request Body                                 | Response                                                       | HTTP Status   |
 |:----------------:|-------------|:---------------:|------------|----------------------------------------------|:---------------------------------------------------------------|---------------|
-|    저자 생성(등록)     | **POST**    |   `/authors`    | NONE       | { "name" : string, "books" : List<Integer> } | { "id" : long, "name" : string, "books" : List<Book> }         | `201 CREATED` |
+|    저자 생성(등록)     | **POST**    |   `/authors`    | NONE       | { "name" : string }                          | { "id" : long, "name" : string, "books" : List<Book> }         | `201 CREATED` |
 |     전체 저자 조회     | **GET**     |   `/authors`    | NONE       | NONE                                         | Page 형태 { "id" : long, "name" : string, "books" : List<Book> } | `200 OK`      |
 | 저자가 집필한 도서 목록 조회 | **GET**     | `/authors/{id}` | Path : id  | NONE                                         | { "id" : long, "name" : string, "books" : List<Book> }         | `200 OK`      |
 |      저자 수정       | **PUT**     | `/authors/{id}` | Path : id  | { "name" : string, "books" : List<Integer> } | { "id" : long, "name" : string, "books" : List<Book> }         | `200 OK`      |
@@ -101,6 +101,12 @@ CREATE TABLE author
     name VARCHAR(30) NOT NULL
 );
 
+CREATE TABLE user
+(
+    id   BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
+);
+
 CREATE TABLE book
 (
     id          BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -109,12 +115,6 @@ CREATE TABLE book
     created_at  DATETIME NOT NULL,
     modified_at DATETIME NOT NULL,
     CONSTRAINT fk_user FOREIGN KEY (loan_id) REFERENCES user (id)
-);
-
-CREATE TABLE user
-(
-    id   BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE book_author
@@ -133,14 +133,14 @@ CREATE TABLE book_author
 ### Configuration
 
 #### Common
-- [ ] TimeStamped Entity
-- [ ] Exception
+- [X] TimeStamped Entity
+- [X] Exception
 
 #### Author
 
-- [ ] Author Entity
-- [ ] Author Request
-- [ ] Author Response
+- [X] Author Entity
+- [X] Author Request
+- [X] Author Response
 - [ ] Author Controller
     - [ ] 등록
     - [ ] 전체 조회
@@ -157,9 +157,9 @@ CREATE TABLE book_author
 
 #### Book
 
-- [ ] Book Entity (TimeStamped Auditing)
-- [ ] Book Request
-- [ ] Book Response
+- [X] Book Entity (TimeStamped Auditing)
+- [X] Book Request
+- [X] Book Response
 - [ ] Book Controller
     - [ ] 등록
     - [ ] 전체 조회
@@ -177,9 +177,9 @@ CREATE TABLE book_author
 
 #### User
 
-- [ ] User Entity
-- [ ] User Request
-- [ ] User Response
+- [X] User Entity
+- [X] User Request
+- [X] User Response
 - [ ] User Controller
     - [ ] 등록
     - [ ] 책 대여
